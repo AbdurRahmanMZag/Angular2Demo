@@ -9,18 +9,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
-        this.pageHeader = 'Page Header';
-        this.isDisabled = false;
-        this.firstName = 'AbdurRahman';
-        this.lastName = 'Mahmoud';
+        this.userText = 'Paragim';
     }
-    AppComponent.prototype.getFullName = function () {
-        return this.firstName + ' ' + this.lastName;
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n                <div>\n                    <h1 [innerHtml]='getFullName()'></h1>\n                    <my-employee></my-employee>\n                    <button bind-disabled='isDisabled'>Click Me</button>\n                </div>\n                "
+            template: "\n                <div style=\"padding:5px;\">\n                    <ul class =\"nav nav-tabs\">\n                        <li routerLinkActive=\"active\"> <a routerLink=\"home\">Home</a> </li>\n                        <li routerLinkActive=\"active\"> <a routerLink=\"employees\">Employees</a> </li>\n                    </ul>\n                        <router-outlet></router-outlet>\n                </div>\n               \n                "
         })
     ], AppComponent);
     return AppComponent;

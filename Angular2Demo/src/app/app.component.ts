@@ -3,20 +3,18 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'my-app',
     template: `
-                <div>
-                    <h1 [innerHtml]='getFullName()'></h1>
-                    <my-employee></my-employee>
-                    <button bind-disabled='isDisabled'>Click Me</button>
+                <div style="padding:5px;">
+                    <ul class ="nav nav-tabs">
+                        <li routerLinkActive="active"> <a routerLink="home">Home</a> </li>
+                        <li routerLinkActive="active"> <a routerLink="employees">Employees</a> </li>
+                    </ul>
+                        <router-outlet></router-outlet>
                 </div>
+               
                 `
 })
 export class AppComponent {
-    pageHeader: string = 'Page Header';
-    isDisabled: boolean = false;
-    firstName: string = 'AbdurRahman';
-    lastName: string = 'Mahmoud';
 
-    getFullName(): string {
-        return this.firstName + ' ' + this.lastName;
-    }
+    userText: string = 'Paragim';
+
 }
